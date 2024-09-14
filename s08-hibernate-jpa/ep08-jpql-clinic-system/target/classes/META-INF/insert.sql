@@ -23,7 +23,7 @@ insert into department_tbl(name,location)values('General medical department','A1
 insert into department_tbl(name,location)values('Outpatient treatment(OPT)','B1');
 
 -- Doctor Table
-insert into doctor_tbl(name,phone,email,specialization,department_id)values('U Sai Kyaw Htun','0999897722','saikyaw11@gmail.com','genaralist',1);
+insert into doctor_tbl(name,phone,email,specialization,department_id)values('U Sai Kyaw Htun','0999897722','saikyaw11@gmail.com','generalist',1);
 insert into doctor_tbl(name,phone,email,specialization,department_id)values('Daw Sein Sein','0998234234','seinse11@gmail.com','Female specialist',1);
 insert into doctor_tbl(name,phone,email,specialization,department_id)values('U Wanna','099923342','wanna@gmail.com','Surgeon',2);
 
