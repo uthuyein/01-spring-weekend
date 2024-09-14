@@ -20,7 +20,7 @@ insert into patient_tbl(name,dob,gender,phone,email,address_id)values('Zaw Htun'
 
 -- Department Table
 insert into department_tbl(name,location)values('General medical department','A1');
-insert into department_tbl(name,location)values('Outpatient treatment','B1');
+insert into department_tbl(name,location)values('Outpatient treatment(OPT)','B1');
 
 -- Doctor Table
 insert into doctor_tbl(name,phone,email,specialization,department_id)values('U Sai Kyaw Htun','0999897722','saikyaw11@gmail.com','genaralist',1);
@@ -30,8 +30,8 @@ insert into doctor_tbl(name,phone,email,specialization,department_id)values('U W
 -- Appointment Table
 insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(1,1,'2024-02-12','11:30','COMPLETED');
 insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(2,2,'2024-02-12','11:40','COMPLETED');
-insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(1,3,'2024-03-10','09:00','SCHEDULED');
-insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(2,3,'2024-03-10','12:00','SCHEDULED');
+insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(1,3,'2024-03-10','09:00','COMPLETED');
+insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(2,3,'2024-03-10','12:00','COMPLETED');
 insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(3,3,'2024-03-11','12:00','COMPLETED');
 insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(4,1,'2024-03-11','13:20','COMPLETED');
 insert into appointment_tbl(patient_id,doctor_id,appointmentDate,appointmentTime,status)values(5,1,'2024-03-11','13:30','COMPLETED');
@@ -56,9 +56,21 @@ insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,di
 insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(1,3,'2024-02-15',3,'upper left leg was broken 3 pieces ','test','test');
 insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(2,3,'2024-02-15',4,'lower left leg was broken ','test','test');
 insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(3,3,'2024-02-16',5,'high blood pressure','test','test');
+insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(4,1,'2024-02-15',4,'lower left leg was broken ','test','test');
+insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(5,2,'2024-02-16',5,'high blood pressure','test','test');
+insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(6,3,'2024-02-15',4,'lower left leg was broken ','test','test');
+insert into medical_record_tbl(patient_id,doctor_id,visitDate,prescription_id,diagonosis,treatment,note)values(4,3,'2024-02-16',5,'high blood pressure','test','test');
 
 --Billing Table
 insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(1,1,'2024-02-12','KPAY',120000);
 insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(2,2,'2024-02-12','CASH',110000);
+insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(3,3,'2024-03-11','CASH',130000);
+insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(4,4,'2024-03-11','CASH',280000);
+insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(5,5,'2024-03-11','CASH',500000);
+insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(6,6,'2024-03-11','CASH',770000);
+insert into billing_tbl(patient_id,appointment_id,billDate,paymentType,amount)values(4,7,'2024-03-11','CASH',850000);
+
+
+
 
 
