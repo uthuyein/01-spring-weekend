@@ -57,7 +57,7 @@ public class AppConfig {
 	
 	private Properties jpaProperties() {
 		var prop = new Properties();
-		prop.setProperty("hibernate.hbm2ddl.auto", "drop-and-create");
+		prop.setProperty("jakarta.persistence.schema-generation.database.action", "drop-and-create");
 		prop.setProperty("hibernate.show_sql", "true");
 		prop.setProperty("hibernate.format_sql", "true");
 		return prop;
