@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import com.jdc.mkt.config.AppConfig;
 import com.jdc.mkt.entity.Category;
 import com.jdc.mkt.services.CategoryService;
 
-@SpringJUnitConfig(classes = AppConfig.class)
-//@SpringJUnitConfig(locations = "classpath:/application.xml")
+//@SpringJUnitConfig(classes = AppConfig.class)
+@SpringJUnitConfig(locations = "classpath:/application.xml")
 public class SpringDataJpaTest {
 
 	@Autowired
