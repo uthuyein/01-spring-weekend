@@ -34,8 +34,7 @@ public class Product implements Serializable{
 	private Double wholeSalePrice;
 	
 	@ElementCollection
-	@Column(name = "size",
-	columnDefinition = "enum('SMALL','MEDIUM','LARGE','XL','XXL') default 'MEDIUM'")
+	@Column(name = "size")	
 	@CollectionTable(name = "sizes_tbl"
 	,joinColumns = @JoinColumn(name = "product_id"))
 	private List<Size> sizes;
