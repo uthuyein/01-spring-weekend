@@ -30,8 +30,8 @@ public class Product implements Serializable{
 	private Integer id;
 	@Column(nullable = false,length = 45)
 	private String name;
-	private Double retailPrice;
-	private Double wholeSalePrice;
+	private Integer detailPrice;
+	private Integer wholeSalePrice;
 	
 	@ElementCollection
 	@Column(name = "size")	

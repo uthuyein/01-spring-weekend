@@ -1,22 +1,32 @@
 package com.jdc.mkt.test;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import com.jdc.mkt.ApplicationConfig;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.jdc.mkt.entity.Category;
 import com.jdc.mkt.services.CategoryService;
 
-@SpringJUnitConfig(classes = ApplicationConfig.class)
-public class CategoryTest {
+public class CategoryTest implements FactoryTestConfig {
 
 	@Autowired
 	CategoryService service;
 	
 	@Test
-	void testCreate() {
-		var cat = new Category("Fruits");
-		service.create(cat);
+	@Disabled
+	void selectCatgoryById() {
+		service.selectCategoryById(1);
+	}
+	@ParameterizedTest
+	@CsvSource(value = "Hugo,1")
+	void selectCategoryByProductName(String name,int res) {
+		Category cat = service.selectCategoryByProductName(name);
+		assertNotNull(cat);
+		assertEquals("Trouser", cat.getName());
 	}
 }

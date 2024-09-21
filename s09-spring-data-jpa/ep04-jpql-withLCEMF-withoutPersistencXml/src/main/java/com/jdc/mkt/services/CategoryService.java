@@ -18,4 +18,17 @@ public class CategoryService {
 	public void create(Category c) {
 		em.persist(c);
 	}
+
+	public Category selectCategoryById(int id) {
+		return em.find(Category.class, id);
+	}
+
+	public Category selectCategoryByProductName(String name) {
+		String jpql = """
+				select c from Category c join c.products p where lower(p.name) = lower(:name)
+				""";
+		var query = em.createQuery(jpql,Category.class);
+		query.setParameter("name", name);
+		return query.getSingleResult();
+	}
 }
