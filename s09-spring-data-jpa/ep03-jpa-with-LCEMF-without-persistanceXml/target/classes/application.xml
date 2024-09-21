@@ -15,25 +15,32 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+	
 	<context:component-scan base-package="com.jdc.mkt.services"></context:component-scan>
-	<context:property-placeholder location="classpath:props/jpa.properties"/>
-	<bean id= "datasource" class="org.apache.commons.dbcp2.BasicDataSource"
+	<context:property-placeholder location="classpath:/props/jpa.properties"/>
+	
+	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource"
 	p:url="${db.url}"
 	p:username="${db.user}"
 	p:password="${db.pass}"></bean>
 	
-	<bean id="vendorAdaptor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
+	<bean id="vendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
 	
-	<bean id="entityManagerFactory" 
-	class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
-	p:jpaVendorAdaptor-ref="vendorAdaptor"
-	p:datasource-ref="datasource"
-	p:packagesToScan="com.jdc.mkt.entity"></bean>
+	<util:map id="jpaProperties">
+		<entry key="jakarta.persistence.schema-generation.database.action" value="drop-and-create"></entry>
+		<entry key="hibernate.show_sql" value="true"></entry>
+		<entry key="hibernate.format_sql" value="true"></entry>		
+	</util:map>
 	
-	<bean id="txmanager" class="org.springframework.orm.jpa.JpaTransactionManager"
-	p:entityManagerFactory-ref="entityManagerFactory"
-	></bean>
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">	
+		<property name="dataSource" ref="ds"></property>
+		<property name="jpaVendorAdapter" ref="vendorAdapter"></property>
+		<property name="jpaPropertyMap" ref="jpaProperties"></property>
+		<property name="packagesToScan" value="com.jdc.mkt.entity" ></property>
+	</bean>
 	
-	<tx:annotation-driven />
+	<bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+	p:entityManagerFactory-ref="emf"></bean>
 	
+	<tx:annotation-driven transaction-manager="txManager"/>
 </beans>

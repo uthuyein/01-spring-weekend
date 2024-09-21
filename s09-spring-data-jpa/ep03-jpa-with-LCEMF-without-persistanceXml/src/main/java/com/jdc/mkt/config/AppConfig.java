@@ -45,13 +45,14 @@ public class AppConfig {
 		bean.setDataSource(dataSource);
 		bean.setPackagesToScan("com.jdc.mkt.entity");
 		bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
-		
+	
 		bean.setJpaProperties(jpaProperties());
 		return bean;
 	}
 
 	@Bean
 	JpaTransactionManager transactionManager(EntityManagerFactory emf) {
+		
 		return new JpaTransactionManager(emf);
 	}
 	
