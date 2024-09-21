@@ -48,5 +48,6 @@
 		<module>ep01-jpa-with-LEMF</module>
 		<module>ep02-jpa-with-LCEMF</module>
 		<module>ep03-jpa-with-LCEMF-without-persistanceXml</module>
+		<module>ep04-jpql-withLCEMF-withoutPersistencXml</module>
 	</modules>
 </project>

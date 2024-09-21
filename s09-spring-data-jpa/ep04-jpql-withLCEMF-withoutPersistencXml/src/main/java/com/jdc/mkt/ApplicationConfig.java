@@ -49,11 +49,12 @@ public class ApplicationConfig {
 		return emf;
 	}
 
-	private Map<String, ?> jpaProperties() {
+	private Map<String, String> jpaProperties() {
 		var map =  new HashMap<String, String>();
 		map.put("hibernate.hbm2ddl.auto", "create");
 		map.put("hibernate.show_sql", "true");
 		map.put("hibernate.format_sql", "true");
+		map.put("jakarta.persistence.sql-load-script-source", "schema.sql");
 		return map;
 	}
 	
