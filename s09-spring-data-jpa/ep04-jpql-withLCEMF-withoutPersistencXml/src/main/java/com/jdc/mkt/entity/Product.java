@@ -1,12 +1,16 @@
 package com.jdc.mkt.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -26,10 +30,16 @@ public class Product implements Serializable{
 	private Integer id;
 	@Column(nullable = false,length = 45)
 	private String name;
-	@Column(columnDefinition = "enum('SMALL','MEDIUM','LARGE','XL','XXL') default 'MEDIUM'")
-	private Size size;
 	private Double retailPrice;
 	private Double wholeSalePrice;
+	
+	@ElementCollection
+	@Column(name = "size",
+	columnDefinition = "enum('SMALL','MEDIUM','LARGE','XL','XXL') default 'MEDIUM'")
+	@CollectionTable(name = "sizes_tbl"
+	,joinColumns = @JoinColumn(name = "product_id"))
+	private List<Size> sizes;
+	
 	@ManyToOne
 	private Category category;
 	
