@@ -3,6 +3,9 @@ package com.jdc.mkt.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.jdc.mkt.listener.EnableTimeListener;
+import com.jdc.mkt.listener.Times;
+
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -22,7 +25,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "product_tbl")
-public class Product implements Serializable{
+public class Product implements EnableTimeListener{
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -32,6 +35,7 @@ public class Product implements Serializable{
 	private String name;
 	private Integer detailPrice;
 	private Integer wholeSalePrice;
+	private Times times;
 	
 	@ElementCollection
 	@Column(name = "size")	

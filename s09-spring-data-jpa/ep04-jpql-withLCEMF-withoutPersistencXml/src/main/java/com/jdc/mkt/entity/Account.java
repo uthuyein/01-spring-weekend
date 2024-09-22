@@ -2,6 +2,11 @@ package com.jdc.mkt.entity;
 
 import java.io.Serializable;
 
+import com.jdc.mkt.listener.EnableTimeListener;
+import com.jdc.mkt.listener.TimeListener;
+import com.jdc.mkt.listener.Times;
+
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,7 +15,8 @@ import lombok.Data;
 
 @Data
 @MappedSuperclass
-public class Account implements Serializable{
+@EntityListeners(TimeListener.class)
+public class Account implements EnableTimeListener{
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -20,6 +26,7 @@ public class Account implements Serializable{
 	private String loginId;
 	private String password;
 	private AccountType account;
+	private Times times;
 	
 	public enum AccountType{
 		ADMIN,CASHIER;
