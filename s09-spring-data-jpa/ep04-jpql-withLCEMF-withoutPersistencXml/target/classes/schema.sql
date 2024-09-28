@@ -1,3 +1,5 @@
+insert into cashier_tbl(username,loginId,password)values('thida aye','thida','123');
+insert into cashier_tbl(username,loginId,password)values('sandar aung','sandar','222');
 
 insert into category_tbl(name) values('T-Shirt');
 insert into category_tbl(name) values('Trouser');
@@ -58,6 +60,20 @@ insert into sizes_tbl(product_id,size)values(10,3);
 insert into sizes_tbl(product_id,size)values(10,4);
 insert into sizes_tbl(product_id,size)values(10,0);
 
+insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,60000,500,59500,'2022-10-20','10:30:22');
+insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,95000,500,594500,'2022-10-20','11:00:00');
+insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,105000,500,104500,'2022-10-21','09:20:12');
+insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,30000,500,29500,'2022-10-22','15:10:13');
+insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,90000,500,89500,'2022-10-24','10:00:22');
 
+insert into sale_history_tbl(product_id,sales_id,qtys) values (1,1,2);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (2,2,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (5,2,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (3,2,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (2,3,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (7,3,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (1,4,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (8,5,1);
+insert into sale_history_tbl(product_id,sales_id,qtys) values (9,5,1);
 
 

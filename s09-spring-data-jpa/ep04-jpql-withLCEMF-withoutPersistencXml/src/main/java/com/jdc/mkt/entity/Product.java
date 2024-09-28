@@ -1,15 +1,16 @@
 package com.jdc.mkt.entity;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.jdc.mkt.listener.EnableTimeListener;
+import com.jdc.mkt.listener.TimeListener;
 import com.jdc.mkt.listener.Times;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,6 +26,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name = "product_tbl")
+@EntityListeners(TimeListener.class)
 public class Product implements EnableTimeListener{
 
 	private static final long serialVersionUID = 1L;

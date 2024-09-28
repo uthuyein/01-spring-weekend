@@ -1,7 +1,5 @@
 package com.jdc.mkt.entity;
 
-import java.io.Serializable;
-
 import com.jdc.mkt.listener.EnableTimeListener;
 import com.jdc.mkt.listener.TimeListener;
 import com.jdc.mkt.listener.Times;
