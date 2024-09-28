@@ -25,6 +25,15 @@ public class ProductTest implements FactoryTestConfig{
 	}
 	
 	@ParameterizedTest
+	@CsvSource("thida aye,5")
+	void selectProductByCashierName(String name,int res) {
+		var list = service.selectProductByCanshierName(name);
+		assertEquals(res, list.size());
+		
+	}
+	
+	@ParameterizedTest
+	@Disabled
 	@CsvSource("40000,60000,5")
 	void selectProductByDetailPrice(Integer frmPrice,Integer toPrice,int res) {
 		var list = service.selectProductByDetailPrice(frmPrice,toPrice);
