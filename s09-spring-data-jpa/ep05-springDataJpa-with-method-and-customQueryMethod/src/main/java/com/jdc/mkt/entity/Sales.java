@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,14 +26,20 @@ public class Sales implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@ManyToOne
-	private Cashier account;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Cashier cashier;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Customer customer;
+	
 	private Boolean isActive = true;
 	private double tax;
 	private Double subTotal;
 	private Double total;
 	private LocalDate saleDate ;
 	private LocalTime saleTime;
+	
 	@OneToMany(mappedBy = "sales")
 	private List<SaleHistory> saleHistoryList;
 }

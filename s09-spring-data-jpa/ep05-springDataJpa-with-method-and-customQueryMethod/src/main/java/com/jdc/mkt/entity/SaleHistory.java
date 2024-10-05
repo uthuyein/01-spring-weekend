@@ -2,11 +2,11 @@ package com.jdc.mkt.entity;
 
 import java.io.Serializable;
 
-import com.jdc.mkt.entity.Product.Size;
+import com.jdc.mkt.entity.enumeration.Size;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
@@ -22,15 +22,20 @@ public class SaleHistory implements Serializable{
 	
 	@EmbeddedId
 	private SaleHistoryPk id;
+	
 	@ManyToOne
 	@MapsId("productId")
 	private Product product;
-	@Enumerated
+	
+	@Column(columnDefinition = "enum('SMALL','MEDIUM','LARGE','XL','XXL') default 'MEDIUM'")
 	private Size size;
+	
 	@ManyToOne
 	@MapsId("salesId")
 	private Sales sales;
+	
 	private int qtys;
+	
 	@Transient
 	private double total;
 

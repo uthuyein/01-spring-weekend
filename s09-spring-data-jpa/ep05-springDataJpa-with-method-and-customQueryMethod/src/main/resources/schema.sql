@@ -16,6 +16,7 @@ insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('POL
 insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('EMPORIO ARMAMNI',55000,50000,2);
 insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('GUESS',35000,32000,2);
 insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('Levis',75000,70000,2);
+
 insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('Levis',20000,15000,3);
 insert into product_tbl(name,detailPrice,wholeSalePrice,category_id) values('Levis',65000,50000,3);
 
@@ -62,14 +63,21 @@ insert into sizes_tbl(product_id,size)values(10,3);
 insert into sizes_tbl(product_id,size)values(10,4);
 insert into sizes_tbl(product_id,size)values(10,0);
 
-insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,60000,500,59500,'2022-10-20','10:30:22');
-insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,95000,500,594500,'2022-10-20','11:00:00');
-insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (1,105000,500,104500,'2022-10-21','09:20:12');
-insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (2,30000,500,29500,'2022-10-22','15:10:13');
-insert into sales_tbl(account_id,subTotal,tax,total,saleDate,saleTime) values (2,90000,500,89500,'2022-10-24','10:00:22');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,60000,500,59500,'2022-10-20','10:30:22');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,95000,500,594500,'2022-10-20','11:00:00');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,105000,500,104500,'2022-10-21','09:20:12');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (2,30000,500,29500,'2022-10-22','15:10:13');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (2,170000,500,169500,'2022-10-24','10:00:22');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,95000,500,84500,'2022-10-25','10:30:20');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,65000,500,64500,'2022-10-25','10:40:12');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,30000,500,24500,'2022-10-25','10:50:02');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (1,50000,500,44500,'2022-10-25','10:00:22');
+insert into sales_tbl(cashier_id,subTotal,tax,total,saleDate,saleTime) values (2,75000,500,66500,'2022-10-24','10:00:22');
 
-insert into sale_history_tbl(product_id,sales_id,size,qtys) values (1,1,0,2);
-insert into sale_history_tbl(product_id,sales_id,size,qtys) values (2,2,1,1);
+
+
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (1,1,3,2);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (2,2,4,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (5,2,1,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (3,2,1,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (2,3,2,1);
@@ -77,5 +85,13 @@ insert into sale_history_tbl(product_id,sales_id,size,qtys) values (7,3,3,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (1,4,3,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (8,5,3,1);
 insert into sale_history_tbl(product_id,sales_id,size,qtys) values (9,5,2,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (1,5,2,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (2,5,2,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (10,6,3,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (11,6,3,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (12,7,3,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (1,8,4,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (2,9,1,1);
+insert into sale_history_tbl(product_id,sales_id,size,qtys) values (10,10,2,1);
 
 

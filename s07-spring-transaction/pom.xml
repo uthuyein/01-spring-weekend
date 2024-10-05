@@ -34,8 +34,6 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
 			<artifactId>HikariCP</artifactId>
@@ -57,7 +55,6 @@
 			<artifactId>junit-jupiter</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -76,6 +73,6 @@
 		<module>ep02-jdbc-tx-java</module>
 		<module>ep03-jdbc-trx-boots</module>
 		<module>ep04-transaction-isolation</module>
-		<module>ep05-programmatic-transaction</module>
+		<module>ep05-programmatic-transaction</module>	
 	</modules>
 </project>

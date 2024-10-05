@@ -14,6 +14,7 @@ public class SaleHistoryPk implements Serializable{
 	
 	@Column(name = "product_id")
 	private Integer productId;
+	
 	@Column(name = "sales_id")
 	private Integer salesId;
 }

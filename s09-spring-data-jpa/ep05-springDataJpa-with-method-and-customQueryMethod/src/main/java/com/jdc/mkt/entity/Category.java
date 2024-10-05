@@ -29,6 +29,10 @@ public class Category implements Serializable{
 	private Integer id;
 	@NonNull
 	private  String name;
+	private String subCategoryOne;
+	private String subCategoryTwo;
+	private String subCategoryThree;
+	
 	private Boolean isActive = true;
 	
 	@OneToMany(mappedBy = "category")

@@ -2,6 +2,7 @@ package com.jdc.mkt.entity;
 
 import java.util.List;
 
+import com.jdc.mkt.entity.enumeration.Size;
 import com.jdc.mkt.listener.EnableTimeListener;
 import com.jdc.mkt.listener.TimeListener;
 import com.jdc.mkt.listener.Times;
@@ -11,6 +12,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -33,8 +35,10 @@ public class Product implements EnableTimeListener{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	@Column(nullable = false,length = 45)
 	private String name;
+	
 	private Integer detailPrice;
 	private Integer wholeSalePrice;
 	private Times times;
@@ -45,14 +49,12 @@ public class Product implements EnableTimeListener{
 	,joinColumns = @JoinColumn(name = "product_id"))
 	private List<Size> sizes;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Category category;
 	
 	private Boolean isActive = true;
 	
-	public enum Size{
-		SMALL,MEDIUM,LARGE,XL,XXL
-	}
+	
 	
 	
 
