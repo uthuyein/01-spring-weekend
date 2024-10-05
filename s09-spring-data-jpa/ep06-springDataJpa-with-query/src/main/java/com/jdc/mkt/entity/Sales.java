@@ -30,7 +30,7 @@ public class Sales implements Serializable{
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Cashier cashier;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne
 	private Customer customer;
 	
 	private Boolean isActive = true;
@@ -40,6 +40,6 @@ public class Sales implements Serializable{
 	private LocalDate saleDate ;
 	private LocalTime saleTime;
 	
-	@OneToMany(mappedBy = "sales")
+	@OneToMany(mappedBy = "sales",fetch = FetchType.EAGER)
 	private List<SaleHistory> saleHistoryList;
 }
