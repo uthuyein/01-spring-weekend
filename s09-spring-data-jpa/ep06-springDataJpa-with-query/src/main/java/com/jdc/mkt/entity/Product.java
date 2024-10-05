@@ -18,6 +18,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -30,15 +32,23 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "product_tbl")
 @EntityListeners(TimeListener.class)
+
+@NamedNativeQuery(
+		name = "Product.selectAllProduct",
+		resultClass = Product.class,
+		query = "select * from product_tbl")
+
+@NamedQueries({
 @NamedQuery(
 		name = "Product.findProductByNam",
 		query = "select p from Product p where p.name = ?1"
-		)
+		),
 
 @NamedQuery(
 		name = "Product.findProductByDetail",
 		query = "select p from Product p where p.detailPrice between :frm and :to"
 		)
+})
 public class Product implements EnableTimeListener{
 
 	private static final long serialVersionUID = 1L;
