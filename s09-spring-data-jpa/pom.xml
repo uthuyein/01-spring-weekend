@@ -49,5 +49,6 @@
 		<module>ep02-jpa-with-LCEMF</module>
 		<module>ep03-jpa-with-LCEMF-without-persistanceXml</module>
 		<module>ep04-jpql-withLCEMF-withoutPersistencXml</module>
+		<module>ep06-springDataJpa-with-query</module>
 	</modules>
 </project>

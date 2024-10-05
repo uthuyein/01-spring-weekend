@@ -11,10 +11,33 @@ public interface ProductRepoWithCustomQueryMethod extends JpaRepository<Product,
 	List<Product> searchByName(String name);
 	
 	long countByCategoryName(String name);
-	
-	List<Product> findFirst3ByCategoryName(String name);
-	
-	List<Product> getDistinctByWholeSalePrice(int wsPrice);
-	
 	void deleteByCategoryName(String name);
+	
+	//Logical Base
+	List<Product> findFirst3ByCategoryName(String name);
+	List<Product> getDistinctByWholeSalePrice(int wsPrice);
+	List<Product> findByNameAndDetailPrice(String name, int dtPrice);
+	List<Product> findByNameOrDetailPrice(String name, int dtPrice);
+
+	Boolean existsByName(String name);	
+	
+	//String Base
+	List<Product> findByNameLike(String name);
+	List<Product> findByNameStartingWith(String name);
+	List<Product> findByNameEndingWith(String string);
+	List<Product> findByNameContaining(String string);
+
+	//Number Base
+
+	List<Product> getByDetailPriceGreaterThanEqual(int i);
+	List<Product> getByDetailPriceLessThanEqual(int i);
+
+	List<Product> getByDetailPriceIsLessThan(int i);
+
+	
+	
+	
+	//boolean findByIsActive(Boolean active);
+
+	
 }

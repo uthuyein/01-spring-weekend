@@ -6,4 +6,5 @@ import com.jdc.mkt.entity.Product;
 
 public interface ProductRepo extends JpaRepository<Product, Integer>{
 
+	
 }
