@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.jdc.mkt.dto.SelectProductNameAndCustomerNameInfDto;
 import com.jdc.mkt.entity.Sales;
 
-public interface SalesRepo extends JpaRepository<Sales, Integer>{
+public interface SalesRepoProj extends JpaRepository<Sales, Integer>{
 
 	@Query("""
 			select p.name name,c.username username from SaleHistory sh

@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jdc.mkt.dto.SelectProductNameAndCustomerNameInfDto;
 import com.jdc.mkt.query.TestConfig;
-import com.jdc.mkt.repo.project.SalesRepo;
+import com.jdc.mkt.repo.project.SalesRepoProj;
 
 public class SaleWithProjectTest extends TestConfig{
 
 	@Autowired
-	SalesRepo repo;
+	SalesRepoProj repo;
 	
 	@Test
 	void selectPNameAndCName() {
