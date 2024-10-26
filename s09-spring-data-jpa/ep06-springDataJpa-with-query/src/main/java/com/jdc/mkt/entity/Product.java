@@ -2,6 +2,8 @@ package com.jdc.mkt.entity;
 
 import java.util.List;
 
+import com.jdc.mkt.dto.classes.ProductIdNamePriceRecord;
+import com.jdc.mkt.dto.inter.ProductIdNamePriceDto;
 import com.jdc.mkt.entity.enumeration.Size;
 import com.jdc.mkt.listener.EnableTimeListener;
 import com.jdc.mkt.listener.TimeListener;
@@ -9,6 +11,8 @@ import com.jdc.mkt.listener.Times;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ColumnResult;
+import jakarta.persistence.ConstructorResult;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -21,6 +25,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.SqlResultSetMapping;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +37,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "product_tbl")
 @EntityListeners(TimeListener.class)
-
 @NamedNativeQuery(
 		name = "Product.selectAllProduct",
 		resultClass = Product.class,
@@ -49,6 +53,25 @@ import lombok.Setter;
 		query = "select p from Product p where p.detailPrice between :frm and :to"
 		)
 })
+
+// projection with native query
+@SqlResultSetMapping(
+		name = "productIdNamePrice",		
+		classes = {
+				//can't change arrange of args
+				@ConstructorResult(columns = {
+						@ColumnResult(name = "id"),
+						@ColumnResult(name = "name"),
+						@ColumnResult(name = "price")
+				}
+				,targetClass = ProductIdNamePriceRecord.class)
+		}		
+		)
+@NamedNativeQuery(
+		resultSetMapping = "productIdNamePrice",
+		name = "Product.productIdNamePrice",
+		query = "select p.id id,p.name name,p.detailPrice price from product_tbl p"
+		)
 public class Product implements EnableTimeListener{
 
 	private static final long serialVersionUID = 1L;
@@ -74,10 +97,6 @@ public class Product implements EnableTimeListener{
 	
 	private Boolean isActive = true;
 	
-	
-	
-	
-
 	public Product(String name, Integer detailPrice, Integer wholeSalePrice, List<Size> sizes, Category category) {
 		this.name = name;
 		this.detailPrice = detailPrice;

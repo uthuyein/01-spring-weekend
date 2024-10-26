@@ -7,8 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.jdc.mkt.entity.Product;
+import com.jdc.mkt.repo.common.BaseRepo;
 
-public interface ProductRepo extends JpaRepository<Product, Integer>{
+public interface ProductRepo extends BaseRepo<Product, Integer>{
 
 	//same as named query name by using parameter index
 	List<Product> findProductByNam(String name);
@@ -27,4 +28,6 @@ public interface ProductRepo extends JpaRepository<Product, Integer>{
 			select * from product_tbl p where p.name = :name
 			""")
 	List<Product> selectAllProductByCat(@Param("name") String name);
+	
+	
 }

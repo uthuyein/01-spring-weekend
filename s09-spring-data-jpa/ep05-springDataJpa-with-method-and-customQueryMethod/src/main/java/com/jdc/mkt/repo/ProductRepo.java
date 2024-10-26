@@ -1,10 +1,9 @@
 package com.jdc.mkt.repo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.jdc.mkt.entity.Product;
+import com.jdc.mkt.repo.common.BaseRepo;
 
-public interface ProductRepo extends JpaRepository<Product, Integer>{
+public interface ProductRepo extends BaseRepo<Product, Integer>{
 
 	
 }

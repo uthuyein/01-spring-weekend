@@ -23,6 +23,6 @@ public interface CategoryRepoProj extends JpaRepository<Category, Integer>{
 	List<SelectCategoryDtoClass> selectByIsActiveWithRecord();
 
 	
-	//dynamic projection with
+	//dynamic projection with interface and record dto
 	<T> T findOneById(int id,Class<T> classes);
 }
