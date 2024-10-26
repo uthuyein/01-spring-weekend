@@ -1,4 +1,4 @@
-package com.jdc.mkt.dto;
+package com.jdc.mkt.dto.inter;
 
 public interface SelectProductAndCategoryByCNameInfDto {
 
