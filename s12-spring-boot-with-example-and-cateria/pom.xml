@@ -45,5 +45,6 @@
   </build>
   <modules>
   	<module>ep01-exampleApi</module>
+  	<module>ep02-sorting-and-paging</module>
   </modules>
 </project>
