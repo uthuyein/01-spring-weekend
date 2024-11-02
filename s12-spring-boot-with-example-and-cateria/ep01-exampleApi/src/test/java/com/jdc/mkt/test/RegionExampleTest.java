@@ -14,8 +14,7 @@ public class RegionExampleTest {
 	
 	@Test
 	void findWithRegionTest() {
-		var list = regionService.findByRegionName("Central");
-		var name = list.stream().findFirst().get().getName();
-		System.out.println("Name :"+name);
+		var list = regionService.findByRegionName("S");
+		list.forEach(r -> System.out.println("Region :"+r.getName()));
 	}
 }

@@ -9,11 +9,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "region_tbl")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Region implements Serializable {
 
 	private static final long serialVersionUID = 1L;
