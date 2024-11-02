@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jdc.mkt.dto.classes.SelectCategoryDtoClass;
 import com.jdc.mkt.dto.classes.SelectCategoryDtoRecord;
 import com.jdc.mkt.dto.inter.SelectCategoryDto;
 import com.jdc.mkt.query.TestConfig;

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jdc.mkt.dto.inter.SelectProductNameAndCustomerNameInfDto;
-import com.jdc.mkt.dto.inter.selectPNameCNameDtPriceQtyDto;
 import com.jdc.mkt.query.TestConfig;
 import com.jdc.mkt.repo.project.SalesRepoProj;
 
