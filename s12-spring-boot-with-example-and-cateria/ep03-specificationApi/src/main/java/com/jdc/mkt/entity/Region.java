@@ -3,6 +3,7 @@ package com.jdc.mkt.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +31,7 @@ public class Region implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	@OneToMany(mappedBy = "region")
+	@OneToMany(mappedBy = "region",orphanRemoval = true,cascade = CascadeType.ALL)
 	private List<State> states;
 	
 	@Override

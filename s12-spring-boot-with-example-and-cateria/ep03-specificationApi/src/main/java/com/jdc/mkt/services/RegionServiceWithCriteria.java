@@ -20,7 +20,7 @@ public class RegionServiceWithCriteria {
 	
 	/*
 	 *  select r from Region r where r.id in 
-	 *  (select s.region.id from State s where s.name like :name)
+	 *  (select s.region.id from State s join s.region where s.name like :name)
 	 */
 
 	public List<Region> selectRegionByStateNameLike(String name){
