@@ -9,12 +9,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
 @Table(name = "state_tbl")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class State implements Serializable{
@@ -28,4 +30,11 @@ public class State implements Serializable{
 	private String capital;
 	@ManyToOne
 	private Region region;
+	
+	
+	@Override
+	public String toString() {	
+		return name;
+	}
+	
 }
