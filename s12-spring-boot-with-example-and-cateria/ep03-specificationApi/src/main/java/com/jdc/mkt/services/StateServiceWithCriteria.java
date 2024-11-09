@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.jdc.mkt.entity.Region_;
 import com.jdc.mkt.entity.State;
+import com.jdc.mkt.entity.State_;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -14,10 +16,24 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
 @Service
-public class StateService {
+public class StateServiceWithCriteria {
 
 	@PersistenceContext
 	EntityManager em;
+	
+	//select s from State s where lower(s.region.name) like lower(:name)
+	public List<State> selectStateByRegionNameLike(String name){
+		var cb = em.getCriteriaBuilder();
+		var regionQuery = cb.createQuery(State.class);
+		var root = regionQuery.from(State.class);
+		regionQuery.select(root);
+		
+		var query = regionQuery.where(
+				cb.like(
+				root.get(State_.region)
+				.get(Region_.name),name.toLowerCase().concat("%")));
+		return em.createQuery(query).getResultList();
+	}
 	
 	// select s from State s where lower(s.name) like lower(:name)
 	public List<State> selectStateByNameLike(String name){
@@ -34,7 +50,7 @@ public class StateService {
 		query.select(root);
 		
 		//where lower(s.name) like lower(:name)
-		query.where(cb.like(cb.lower(root.get("name")), name.toLowerCase().concat("%")));
+		query.where(cb.like(cb.lower(root.get(State_.name)), name.toLowerCase().concat("%")));
 		
 		TypedQuery<State> tpQuery =  em.createQuery(query);
 		
