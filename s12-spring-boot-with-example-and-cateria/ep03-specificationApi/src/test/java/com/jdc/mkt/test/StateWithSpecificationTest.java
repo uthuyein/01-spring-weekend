@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.jdc.mkt.services.StateServiceSpecification;
+import com.jdc.mkt.services.CStateServiceSpecification;
 
 @SpringBootTest
-public class SpecificationTest {
+public class StateWithSpecificationTest {
 
 	@Autowired
-	StateServiceSpecification service;
+	CStateServiceSpecification service;
 	
 	@Test
 	@Disabled

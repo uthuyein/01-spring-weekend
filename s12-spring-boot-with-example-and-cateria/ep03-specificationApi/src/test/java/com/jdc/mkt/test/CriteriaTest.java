@@ -5,16 +5,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.jdc.mkt.services.RegionServiceWithCriteria;
-import com.jdc.mkt.services.StateServiceWithCriteria;
+import com.jdc.mkt.services.BRegionServiceWithCriteria;
+import com.jdc.mkt.services.AStateServiceWithCriteria;
 
 @SpringBootTest
 public class CriteriaTest {
 
 	@Autowired
-	StateServiceWithCriteria service;
+	AStateServiceWithCriteria service;
 	@Autowired
-	RegionServiceWithCriteria regionService;
+	BRegionServiceWithCriteria regionService;
 	
 	@Test
 	@Disabled

@@ -16,7 +16,7 @@ insert into state_tbl (name, region_id, capital) values ('Kayah State', 3, 'Loik
 insert into state_tbl (name, region_id, capital) values ('Rakhine State', 4, 'Sittwe');
 insert into state_tbl (name, region_id, capital) values ('Magway Region', 5, 'Magwe');
 insert into state_tbl (name, region_id, capital) values ('Mandalay Region', 5, 'Mandalay');
-insert into state_tbl (name, region_id, capital) values ('Yangon Region', 5, 'Yangon');
+insert into state_tbl (name, region_id, capital) values ('Yangon Region', 1, 'Yangon');
 insert into state_tbl (name, region_id, capital) values ('Naypyidaw Union Territory', 5, 'Naypyidaw');
 insert into state_tbl (name, region_id, capital) values ('Bago Region', 6, 'Bago');
 insert into state_tbl (name, region_id, capital) values ('Kayin State', 7, 'Hpa-an');

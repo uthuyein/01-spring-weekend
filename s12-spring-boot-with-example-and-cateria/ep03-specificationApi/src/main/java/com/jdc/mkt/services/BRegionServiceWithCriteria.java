@@ -13,7 +13,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
 @Service
-public class RegionServiceWithCriteria {
+public class BRegionServiceWithCriteria {
 
 	@PersistenceContext
 	EntityManager em;

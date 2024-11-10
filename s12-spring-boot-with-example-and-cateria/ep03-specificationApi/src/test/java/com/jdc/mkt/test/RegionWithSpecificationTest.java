@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.jdc.mkt.services.RegionServiceWithSpecification;
+import com.jdc.mkt.services.DRegionServiceWithSpecification;
 
 @SpringBootTest
 public class RegionWithSpecificationTest {
 
 	@Autowired
-	RegionServiceWithSpecification service;
+	DRegionServiceWithSpecification service;
 	
 	@Test
 	@Disabled

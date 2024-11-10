@@ -16,7 +16,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
 @Service
-public class StateServiceWithCriteria {
+public class AStateServiceWithCriteria {
 
 	@PersistenceContext
 	EntityManager em;

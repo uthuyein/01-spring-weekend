@@ -12,7 +12,7 @@ import com.jdc.mkt.entity.State_;
 import com.jdc.mkt.repository.StateRepository;
 
 @Service
-public class StateServiceSpecification {
+public class CStateServiceSpecification {
 
 	@Autowired
 	StateRepository repo;

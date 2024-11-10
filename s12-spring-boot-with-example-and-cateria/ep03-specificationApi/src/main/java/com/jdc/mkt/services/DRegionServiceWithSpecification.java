@@ -15,7 +15,7 @@ import com.jdc.mkt.repository.RegionRepository;
 import com.jdc.mkt.repository.StateRepository;
 
 @Service
-public class RegionServiceWithSpecification {
+public class DRegionServiceWithSpecification {
 
 	@Autowired
 	RegionRepository repo;
