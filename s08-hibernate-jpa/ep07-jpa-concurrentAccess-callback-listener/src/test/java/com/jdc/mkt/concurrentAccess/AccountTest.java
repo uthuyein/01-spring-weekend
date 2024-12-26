@@ -30,9 +30,7 @@ public class AccountTest extends CommonFactory{
 			Thread.sleep(2500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 	}
 	
 	private Thread getOperationOne() {
