@@ -15,6 +15,7 @@ public class RemoveTest extends CommonFactoryTest {
 		em.remove(p1);
 		em.getTransaction().commit();
 	}
+	
 	@Test
 	void removeCategoryTest() {
 		var em = emf.createEntityManager();
